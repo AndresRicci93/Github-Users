@@ -1,11 +1,8 @@
 import React from 'react';
-import DelButton from '../DelButton/DelButton'
-
+// import DelButton from '../DelButton/DelButton'
 
 // const Remove = (card) => {
 //   let card = card.target.value;
-
-
 
 // }
 
@@ -21,8 +18,6 @@ const Card = props => {
         <div>{props.location}</div>
         <div>{props.blog}</div>
         <div>{props.followers}</div>
-        
-
       </div>
     </div>
   )
