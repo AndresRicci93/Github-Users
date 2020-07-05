@@ -3,18 +3,22 @@ import Form from './Components/Form'
 import CardList from './Components/CardList'
 
 const App = () => {
+<<<<<<< HEAD
 
   const [cards, setCards] = useState([])
   
   console.log(cards);
 
+=======
+  const [cards, setCards] = useState([]);
+>>>>>>> 5eb3a48205fbc4e6dc20aee5718f7f82fcd7474e
 
   const addNewCard = cardInfo => {
+    // push
     setCards(cards.concat(cardInfo))
-  
-
   }
 
+<<<<<<< HEAD
   //  useEffect(() => {
   //    console.log('i just mounted');
   //  }, [])
@@ -36,6 +40,22 @@ const App = () => {
     setCards(remainingCards);
     
   }
+=======
+  const removeCard = index => {
+    setCards(cards.filter(item => item !== cards.splice(index, 1)));
+  }
+
+  // [] it will run only once!
+  // useEffect(() => {
+  //   console.log('i just mounted!');
+  // }, [])
+
+  // this will watch out for state changes
+  // useEffect(() => {
+  //   console.log('this runs when cards update');
+  //   setCards(cards);
+  // }, [cards])
+>>>>>>> 5eb3a48205fbc4e6dc20aee5718f7f82fcd7474e
 
   return (
     <div>
