@@ -3,10 +3,14 @@ import Card from './Card/Card'
 
 
 
-const CardList = props => (
+
+
+const CardList = (props) => (
   <div>
-    {props.cards.map(card => (
-      <Card {...card} />
+    {props.cards.map((card,index) =>  (
+      
+      <Card removeCard={props.removeCard} key={index} cardIndex={index} card={card} />
+
     ))}
   </div>
 )
