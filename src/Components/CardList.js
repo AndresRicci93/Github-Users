@@ -6,7 +6,7 @@ import Card from './Card/Card'
 const CardList = props => (
   <div>
     {props.cards.map((card, index) => (
-      <Card key={index} card={card} />
+      <Card removeCard={props.removeCard} key={index} cardIndex={index} card={card} />
     ))}
   </div>
 )
