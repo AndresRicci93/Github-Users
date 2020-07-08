@@ -1,32 +1,23 @@
-import React, { useState} from 'react'
-import Form from './Components/Form'
-import CardList from './Components/CardList'
+import React, { useState,useEffect} from 'react'
+import axios from 'axios';
+import UserList from './Components/UserList/UserList'
 
 const App = () => {
 
   const [cards, setCards] = useState([])
   
-  console.log(cards);
-
-
-  const addNewCard = cardInfo => {
-    // push
-    setCards(cards.concat(cardInfo))
-  }
-
-  //  useEffect(() => {
-  //    console.log('i just mounted');
-  //  }, [])
-
-  // //this will watch out for state  changes
-  //  useEffect(() => {
-  //    console.log('this runs when cards update');
-  //    setCards(cards);
-  //  }, [cards])
-
+  useEffect(() => {
+    
+    const fetchUsers = async () => {
+      const result = await axios(`https://api.github.com/users`);     
+      setCards(result.data);
+    };
+    
+    fetchUsers();
+  }, []);
   const removeCard = index => {
 
-    console.log('this is coming from App.js' ,index);
+    console.log('this is coming from App.js' , index);
     
     //splice function to remove the card
 
@@ -38,8 +29,8 @@ const App = () => {
 
   return (
     <div>
-      <Form onSubmit={addNewCard} />
-      <CardList removeCard={removeCard} cards={cards} />
+      
+      <UserList removeCard={removeCard} cards={cards} />
     </div>
   )
 }
