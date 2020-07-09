@@ -6,6 +6,7 @@ const UserList = (props) => {
 
 
     return props.cards.length <= 0 ? 'loading users...' : (
+
       <div className="container">
 
         <section className="user-cards">
@@ -17,6 +18,7 @@ const UserList = (props) => {
     ))}
         </section>
       </div>
+
       )
 }
 
